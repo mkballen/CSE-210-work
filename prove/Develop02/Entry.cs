@@ -1,22 +1,26 @@
 public class Entry
 {
-    public string Response;
-    public string Prompt;
-    public string Date;
+    public string response;
+    public string prompt;
+    public string date;
     
     public Entry(string Response, string Prompt)
     {
-        this.Response = Response;
-        this.Prompt = Prompt;
-        this.Date = DateTime.Today.ToShortDateString();
+        this.response = Response;
+        this.prompt = Prompt;
+        this.date = DateTime.Today.ToShortDateString();
+    }
+    public Entry(string Response, string Prompt, string time)
+    {
+        this.response = Response;
+        this.prompt = Prompt;
+        this.date = time;
     }
     
-    public Story(){
-        this.Response;
-        this.Prompt;
-        this.Date;
-        string journal = ReadLine({Date} {Prompt} {Response});
-        return ;
+    public string AsString(){
+        
+        string entry = $"{date}|{prompt}|{response}";
+        return entry;
     }
 
 }
