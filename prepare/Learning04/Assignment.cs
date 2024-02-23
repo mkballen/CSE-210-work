@@ -2,9 +2,9 @@ class Assignment
 {
     protected string student = "";
     protected string topic = "";
-    public Assignment(string student, string topic){
-        this.student = "student";
-        this.topic = "topic";
+    public Assignment(string _student, string _topic){
+        this.student = _student;
+        this.topic = _topic;
     }
     public string GetStudent(string student){
         return student;
@@ -19,7 +19,7 @@ class Assignment
         topic = _topic;
     }
 
-    public string GetSummary(string student, string topic){
+    public string GetSummary(){
         return student + "-" + topic;
     }
 
