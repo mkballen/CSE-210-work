@@ -1,13 +1,13 @@
 class ExploreMasterBedroom : Explore
 {
 
-    public ExploreMasterBedroom(bool light, string location, bool door) : base (light, location, door)
+    public ExploreMasterBedroom(bool is_light_on, string location, bool is_door_open) : base (is_light_on, location, is_door_open)
     {
 
     }
-    public void entry(){
-        door = true;
-        while (door != false){
+    public void entry(bool is_door_open){
+        
+        while (is_door_open != false){
             Console.WriteLine("""
             From the door you see a large spacious room. Infront of you is a king size bed to your left and a dress across fron the
             foot of the bed. Along the same wall is a door. At the head of the bed are two night stands 
@@ -16,7 +16,7 @@ class ExploreMasterBedroom : Explore
             
             Console.WriteLine("""
             Return to Hall
-            Invitory
+            Invetory
             Bed
             Dresser
             Door
@@ -32,28 +32,29 @@ class ExploreMasterBedroom : Explore
             }
             switch (location){
                 case "Return to hall":
-                //Hall class
+                    is_door_open = true;
+                    break;
+                case "Invitory":
+                Invetory tory = new Invetory();
+                tory.Item();
                 break;
-                // case "Invitory":
-                // //invitory class
-                // break;
                 case "Bed":
-                //bed method
-                break;
+                    SearchBed();
+                    break;
                 case "Dresser":
-                //Dresser method
-                break;
+                    //Dresser method
+                    break;
                 case "Dresser Left":
-                //Dresser Left
-                break;
+                    //Dresser Left
+                    break;
                 case "Dresser Right":
-                //Dresser Right
-                break;
+                    //Dresser Right
+                    break;
                 case "Curtains":
-                break;
+                    break;
                 default:
-
-                break;
+                    is_door_open = false;
+                    break;
             }
         }
     }
@@ -61,13 +62,14 @@ class ExploreMasterBedroom : Explore
         Console.WriteLine("""
         As you move over to the bed you see the bed made.
         """);
-        
+        bool isSearching = true;
         Console.WriteLine("""
         Search under bed
         search under the coverse 
         continue searching
         """);
         string bed = "";
+        
 
         //while 
     }
