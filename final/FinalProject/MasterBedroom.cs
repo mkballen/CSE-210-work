@@ -1,28 +1,31 @@
-class ExploreMasterBedroom : Explore
+class ExploreMasterBedroom
 {
+    private bool light_on;
+    private string location;
+    private bool door_open;
 
-    public ExploreMasterBedroom(bool is_light_on, string location, bool is_door_open) : base (is_light_on, location, is_door_open)
+    public ExploreMasterBedroom()
     {
 
     }
-    public void entry(bool is_door_open){
+    public void entry(){
         
-        while (is_door_open != false){
+        while (door_open != false){
             Console.WriteLine("""
             From the door you see a large spacious room. Infront of you is a king size bed to your left and a dress across fron the
             foot of the bed. Along the same wall is a door. At the head of the bed are two night stands 
-            on either side with a lamp on top. On the far wall is a closed curtain.
+            on either side with a lamp on top.
             """);
             
             Console.WriteLine("""
             Return to Hall
             Invetory
             Bed
-            Dresser
-            Door
+            Main Dresser
+            
             Dresser Left
             Dresser Right
-            Curtains
+            
             """);
             try{
                 location = Console.ReadLine();
@@ -32,7 +35,7 @@ class ExploreMasterBedroom : Explore
             }
             switch (location){
                 case "Return to hall":
-                    is_door_open = true;
+                    door_open = true;
                     break;
                 case "Invitory":
                 Invetory tory = new Invetory();
@@ -41,37 +44,27 @@ class ExploreMasterBedroom : Explore
                 case "Bed":
                     SearchBed();
                     break;
-                case "Dresser":
-                    //Dresser method
+                case "Main Dresser":
+                    Console.WriteLine("You find nothing in the drawers but you do find a coupon book on top of the dresser.");
                     break;
                 case "Dresser Left":
-                    //Dresser Left
+                    Console.WriteLine("You find nothing in the dresser.");
                     break;
                 case "Dresser Right":
-                    //Dresser Right
+                    Console.WriteLine("You find nothing in the dresser.");
                     break;
-                case "Curtains":
-                    break;
-                default:
-                    is_door_open = false;
+                case "Return to Hall":
+                    door_open = false;
                     break;
             }
         }
     }
     public void SearchBed(){
         Console.WriteLine("""
-        As you move over to the bed you see the bed made.
-        """);
-        bool isSearching = true;
-        Console.WriteLine("""
-        Search under bed
-        search under the coverse 
-        continue searching
-        """);
-        string bed = "";
-        
+        As you move over to the bed you see the bed made and a card on the bed.
 
-        //while 
+        The card says, "Welcome to the master bedroom. We hope you can find this place suitible to your needs." 
+        """);
     }
     //display image
 }

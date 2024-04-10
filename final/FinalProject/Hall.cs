@@ -4,7 +4,9 @@ class Hall{
     private string locations = "";
 
     public Hall(){
-
+        bool light_on = true;
+        bool door_open = true;
+        string locations = "";
     }
     public void ViewingHall(){
         Console.WriteLine("""
@@ -20,15 +22,16 @@ class Hall{
         locations = Console.ReadLine();
         while (door_open != false){
             if (locations == "bedroom 1"){
-                //master bedroom
+                ExploreMasterBedroom bedroom = new ExploreMasterBedroom();
+                bedroom.entry();
                 break;
             }
             else if(locations == "bedroom 2"){
-                //kids bedroom
+                Room();
                 break;
             }
             else if(locations == "bathroom"){
-                //bathroom
+                Room();
                 break;
             }
             else if (locations == "leave"){
@@ -41,5 +44,8 @@ class Hall{
             }
 
         }
+    }
+    public virtual void Room(){
+        Console.WriteLine("this room smells");
     }
 }

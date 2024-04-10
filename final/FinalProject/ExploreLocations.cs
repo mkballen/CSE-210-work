@@ -62,15 +62,18 @@ class Explore{
                 
             }
             else if (location == "kichen"){
-                //kichen
+                Kichen kichen = new Kichen();
+                kichen.FoodArea();
                 
             }
             else if (location == "dining room"){
-                //dining room
+                DinningRoom dinningroom = new DinningRoom();
+                dinningroom.Dinner();
                 
             }
             else if (location == "living room"){
-                //living rooom
+                LivingRoom livingroom = new LivingRoom();
+                livingroom.FrontRoom();
                 
             }
             else if (location == "invetory"){

@@ -11,8 +11,10 @@ class Invetory
             foreach(string objects in invetory){
                 Console.WriteLine(objects);
             }
+            
             Console.WriteLine("Would you like to add to invetory yes/no");
             items = Console.ReadLine();
+            
             if (items == "yes"){
                 Console.WriteLine("What would you like to add.");
                 string objects = Console.ReadLine();
